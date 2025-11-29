@@ -4,18 +4,13 @@ dotenv.config();
 
 import { createBot, createProvider, createFlow } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
-import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
 import { MetaProvider } from "@Builderbot/provider-meta";
 
 const PORT = process.env.PORT ?? 3008
 
-const main = async () => {
+const main = async () => { 
     
     const adapterFlow = createFlow([])
-
-    // const adapterProvider = createProvider(Provider,
-    //     { version: [2, 3000, 1027934701] as any }
-    // )
 
     const adapterProvider = createProvider(MetaProvider, {
         jwtToken: process.env.JWTOKEN, //EAARBW3ZBGU0UBAACDjtQIzI8JuEa.............
